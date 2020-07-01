@@ -72,3 +72,13 @@ class Credential:
             password += alphabets[random_number]
         return password
 
+    @classmethod
+    def display_accounts(cls, email):
+        with open(Credential.database, 'r')as accounts_file:
+            all_accounts = csv.DictReader(accounts_file)
+            all_user_accounts = []
+            for account in all_accounts:
+                if account['email'] == email:
+                    all_user_accounts.append(account)
+            
+            return all_user_accounts
