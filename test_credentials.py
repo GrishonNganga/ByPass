@@ -63,5 +63,17 @@ class TestCredential(unittest.TestCase):
         self.assertGreater(len(random_password), 7)
         self.assertLess(len(random_password), 9)
 
+    def test_display_accounts(self):
+        self.test_other_user_credential.create_credential()
+
+        list_of_credentials = self.test_other_user_credential.display_accounts()
+        for a_credential in list_of_credentials:
+            a_credential_exist = Credential.check_an_account_exist(a_credential.get_email(), a_credential.get_account() )
+            if not a_credential_exist:
+                return False
+        
+        self.assertTrue(a_credential_exist)
+
+
 if __name__ == '__main__':
     unittest.main()
