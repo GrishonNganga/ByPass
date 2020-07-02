@@ -4,10 +4,12 @@ from credentials import Credential
 
 def main():
     home = True
+             
+    head = ' ***********************************************************************************************'
     while home:
-        print(' -----------------------------------------------------------------------------------------------')
+        print(head)
         print('|\t\t\t\t\t\t\t\t\t\t\t\t| \n|\t\t\t\tWELCOME\tTO\tBY-PASS\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t\t\t\t\t\t|\n|\t\t\t*MANGE ALL YOUR PASSWORDS IN ONE PLACE*\t\t\t\t\t|\n|\t\t\t\t\t\t\t\t\t\t\t\t|\n|\tSelect a number to continue...\t\t\t\t\t\t\t\t|\n|1. Join BY-PASS\t\t\t\t\t\t\t\t\t\t|\n|2. Login to BY-PASS\t\t\t\t\t\t\t\t\t\t|\n|3. Exit BY-PASS\t\t\t\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t\t\t\t\t\t|')
-        print(' -----------------------------------------------------------------------------------------------')
+        print(head)
 
         option = input()
         if option == '1':

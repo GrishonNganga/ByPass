@@ -5,13 +5,16 @@ import os
 class TestUsers(unittest.TestCase):
 
     def setUp(self):
+        '''Set up data to be used in all the tests.'''
         self.new_user = User('Kishy', 'Gikish', 'kishy@gmail.com','123@Iiht' )
 
     def tearDown(self):
+        '''Clean up data after all tests.'''
         if os.path.isfile(User.database):
             os.remove(User.database)
        
     def test_read_file(self):
+        '''Test to ensure method can read data from the db.'''
         #Setup
         with open(User.database, 'w') as write_file:
             data_to_write = "This is a test to see if it works"
@@ -31,6 +34,7 @@ class TestUsers(unittest.TestCase):
         self.assertEqual('123@Iiht', self.new_user.get_password())
     
     def test_check_account_exist(self):
+        '''Test to ensure method can search if a user exists on th db.'''
         #Setup 
         self.new_user.create_account()
 
@@ -40,6 +44,7 @@ class TestUsers(unittest.TestCase):
         self.assertTrue(account_exists)
 
     def test_create_account(self):
+        '''Test to rndure method can succussfully create a user account on the db.'''
         #Perform
         first = self.new_user.create_account()
  
@@ -59,6 +64,7 @@ class TestUsers(unittest.TestCase):
 
 
     def test_delete_account(self):
+        '''Test to ensure method can successfully delete a user from the db.'''
         #Setup
         self.new_user.create_account()
         data_on_file_before = self.new_user.read_file()
