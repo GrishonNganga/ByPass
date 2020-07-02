@@ -6,10 +6,10 @@
 Maintianing passwords across applications is just a pain in the .With ByPass you can have all your passwords stored for you in a vault and all you have to do is remember just one password. ~Your ByPass password.
 It is a commmand-line application. Meaning you use it on the terminal. This is efficient for developers, but best believe its interface... Well its friendly.
 ## Setup/Installation Requirements
+#### Application requires python 3.6. 
 * Clone the repo `git clone https://github.com/GrishonNganga/ByPass.git`\
 * Navigate into the directory cd /ByPass\
 * Run the application python3.6 run.py
-
 
 ## Known Bugs
 {Are there issues that have not yet been resolved that you want to let users know you know? Outline any issues that would impact use of your application. Share any workarounds that are in place. }
