@@ -94,8 +94,9 @@ class Credential:
             accounts_non_delete = []
             with open(Credential.database, 'r')as cred_file:
                 cred_data = csv.DictReader(cred_file)
+                print(f'Account to delete is {account} and email id {email}')
                 for account in cred_data:
-                    if account['email'] == email and account['account'] != account:
+                    if account['email'] is email and account['account'] is not account:
                         print(f'Appended {account}')
                         accounts_non_delete.append(account)
             
