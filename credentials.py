@@ -1,5 +1,8 @@
 import csv, os, random
 class Credential:
+    '''
+    Account that is created by a User to store an account credential to be stored.
+    '''
     database = 'credentials.csv'
     def __init__(self, email, account, password):
         self.email = email
@@ -7,18 +10,24 @@ class Credential:
         self.password = password
 
     def get_email(self):
+        '''Get email of the particular credential. ***Email is what uniquely identifies users. So the email will br thr unique identifier of a users accounts.'''
         return self.email
     
     def get_account(self):
+        '''Returns a credentials account. Which determines which platform or service the password is used for.'''
         return self.account
 
     def get_password(self):
+        '''Returns a credential's password.'''
         return self.password
     
     def set_password(self, password):
+        '''Sets the credential's password'''
         self.password = password
     
     def create_credential(self):
+        '''Stores the credential to the db (csv file)'''
+
         file_exist = os.path.isfile(Credential.database)
         with open(Credential.database, 'a')as file_to_write:
             if not file_exist:
@@ -42,6 +51,7 @@ class Credential:
                 return True
 
     def check_account_exist(self):
+        '''Returns True of False. After checking the db if the Credential exists for the user.'''
         with open(Credential.database, 'r')as read_file:
             fields = ['email', 'account', 'password']
             read_data = csv.DictReader(read_file, fieldnames=fields)
@@ -52,6 +62,8 @@ class Credential:
 
     @classmethod
     def check_an_account_exist(cls, email, account):
+        '''Like check_account_exist but not called from a credential instance.'''
+
         db_present = os.path.isfile(Credential.database)
         if db_present:
             with open(Credential.database, 'r')as read_file:
@@ -65,6 +77,7 @@ class Credential:
    
     @classmethod
     def randomizer(cls):
+        '''Generates a password'''
         password = ''
         alphabets = "ab(cdefg^hi%jklm+no#pqrs@tuv)wxyz!*_"
         special ='!^%@(*)#_+@'
@@ -75,6 +88,7 @@ class Credential:
 
     @classmethod
     def display_accounts(cls, email):
+        '''Search the db and return a users accounts that they have created.'''
         file_exist = os.path.isfile(Credential.database)
         all_user_accounts = []
         if file_exist:
@@ -89,6 +103,7 @@ class Credential:
 
     @classmethod
     def delete_account(cls, email, account):
+        '''Search the db and delete a users account'''
         db_exists = os.path.isfile(Credential.database)
         if db_exists:
             accounts_non_delete = []
