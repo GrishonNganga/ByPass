@@ -1,5 +1,7 @@
 import csv, os
 class User:
+    '''Create User's instance'''
+
     database = 'users.csv'
     def __init__(self, first_name, last_name, email, password):
         self.first_name = first_name
@@ -8,21 +10,27 @@ class User:
         self.password = password
     
     def get_first_name(self):
+        '''Return user instance first name'''
         return self.first_name
 
     def get_last_name(self):
+        '''Return user instsnce lsst name'''
         return self.last_name
 
     def get_email(self):
+        '''Return user instance email'''
         return self.email
        
     def get_password(self):
+        '''Return user instance password'''
         return self.password
     
     def set_password(self, password):
+        '''Set user instance password'''
         self.password = password
 
     def account_created(self):
+        '''Return if a User exists on the db.'''
         with open(User.database, 'r') as check_creation:
             csv_data = csv.DictReader(check_creation)
             for line in csv_data:
@@ -31,6 +39,7 @@ class User:
             return False
 
     def create_account(self):
+        '''Create a User instance record on the db.'''
         fields = ['first_name', 'last_name', 'email', 'password']
         file_exists = os.path.isfile(User.database)
         if not file_exists:
@@ -60,6 +69,7 @@ class User:
                 return False        
         
     def delete_account(self):
+        '''Remove a User instance from the db.'''
         with open(User.database, 'r') as file:
             csv_file = csv.DictReader(file)
 
@@ -82,6 +92,7 @@ class User:
 
 
     def read_file(self):
+        '''Return data from the db.'''
         try: 
             with open(User.database, 'r') as opened_file:    
                 return opened_file.read()
@@ -91,6 +102,7 @@ class User:
 
     @classmethod
     def check_account_exist(self, email, password):
+        '''Search if a user exists on the db.'''
         with open(User.database, 'r') as check_creation:
             csv_data = csv.DictReader(check_creation)
             for line in csv_data:
