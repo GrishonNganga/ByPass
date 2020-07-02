@@ -170,6 +170,7 @@ def main():
                                     to_delete = int(input())      
                                     account_to_delete = all_acounts[to_delete - 1]
                                     print(account_to_delete)   
+                                    print(account_to_delete['account'])
                                     is_deleted = Credential.delete_account(account_to_delete['email'], account_to_delete['account'])  
                                     if is_deleted:
                                         print('--------------------------------------------------------')

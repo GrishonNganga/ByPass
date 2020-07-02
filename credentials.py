@@ -87,6 +87,7 @@ class Credential:
         else:
             return all_user_accounts
 
+    @classmethod
     def delete_account(cls, email, account):
         db_exists = os.path.isfile(Credential.database)
         if db_exists:
@@ -95,6 +96,7 @@ class Credential:
                 cred_data = csv.DictReader(cred_file)
                 for account in cred_data:
                     if account['email'] == email and account['account'] != account:
+                        print(f'Appended {account}')
                         accounts_non_delete.append(account)
             
             with open(Credential.database, 'w')as cred_file_write:
@@ -102,7 +104,7 @@ class Credential:
                 non_delete_accounts = csv.DictWriter(cred_file_write, fieldnames=fields, lineterminator='\n')
                 non_delete_accounts.writeheader()
                 for account in accounts_non_delete:
-                    writerow(account)
+                    non_delete_accounts.writerow(account)
 
                 return True
         
