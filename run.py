@@ -81,7 +81,7 @@ def main():
                         account_status = User.check_account_exist(email, password)
                         if account_status:
                             print('--------------------------------------------------------')
-                            print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tWE ARE IN\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|1. View Password Accounts\t\t\t\t|\n|2. Create new Password Account\t\t\t\t|\n|\t\t\t\t\t\t\t|')
+                            print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tWE ARE IN\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|1. View Password Accounts\t\t\t\t|\n|2. Create new Password Account\t\t\t\t|\n|3. Delete a password Account\t\t\t\t|\n\t\t\t\t\t\t\t|')
                             print('--------------------------------------------------------')
                             perform = input()
                             if perform == '1':
@@ -157,7 +157,29 @@ def main():
                                     print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Sorry. Account already exist.\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t|')
                                     print('--------------------------------------------------------')
                                     input()  
-                                    login = not login                                          
+                                    login = not login      
+                            elif perform == '3':
+                                all_acounts = Credential.display_accounts(email)
+                                print('--------------------------------------------------------')
+                                print('|\t\t\t\t\t\t\t|\n|\tSelect the account to delete.\t\t\t|')
+                                if len(all_acounts) > 0:
+                                    count = 1
+                                    for account in all_acounts:
+                                        print(f'\t\t\t\t\t\t\t|\n|{count} {account["account"]}\t{account["password"]}')
+                                        count +=1     
+                                    to_delete = int(input())      
+                                    account_to_delete = all_acounts[to_delete - 1]
+                                    print(account_to_delete)   
+                                    is_deleted = Credential.delete_account(account_to_delete['email'], account_to_delete['account'])  
+                                    if is_deleted:
+                                        print('--------------------------------------------------------')
+                                        print('|\t\t\t\t\t\t\t|\n|\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Account deleted successfully\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\tEnter\t\t\t\t|')
+                                        print('--------------------------------------------------------')
+                                        input()
+                                    else:
+                                        print('--------------------------------------------------------')
+                                        print('|\t\t\t\t\t\t\t|\n|\!!!!!!!!!!!!!!!!!!!!!!!!!!t\t\t|\n|\t\t\t\t\t\t\t|\n|Sorry Something wrong happened!\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\tEnter\t\t\t\t|')
+                                        print('--------------------------------------------------------')
                             else:
                                 login = not login
                         else:

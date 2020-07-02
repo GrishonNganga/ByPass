@@ -62,6 +62,7 @@ class Credential:
                         return True
                 return False
         else: return False
+   
     @classmethod
     def randomizer(cls):
         password = ''
@@ -74,11 +75,35 @@ class Credential:
 
     @classmethod
     def display_accounts(cls, email):
-        with open(Credential.database, 'r')as accounts_file:
-            all_accounts = csv.DictReader(accounts_file)
-            all_user_accounts = []
-            for account in all_accounts:
-                if account['email'] == email:
-                    all_user_accounts.append(account)
-            
+        file_exist = os.path.isfile(Credential.database)
+        all_user_accounts = []
+        if file_exist:
+            with open(Credential.database, 'r')as accounts_file:
+                all_accounts = csv.DictReader(accounts_file)
+                for account in all_accounts:
+                    if account['email'] == email:
+                        all_user_accounts.append(account)
+                return all_user_accounts
+        else:
             return all_user_accounts
+
+    def delete_account(cls, email, account):
+        db_exists = os.path.isfile(Credential.database)
+        if db_exists:
+            accounts_non_delete = []
+            with open(Credential.database, 'r')as cred_file:
+                cred_data = csv.DictReader(cred_file)
+                for account in cred_data:
+                    if account['email'] == email and account['account'] != account:
+                        accounts_non_delete.append(account)
+            
+            with open(Credential.database, 'w')as cred_file_write:
+                fields = ['email', 'account', 'password']
+                non_delete_accounts = csv.DictWriter(cred_file_write, fieldnames=fields, lineterminator='\n')
+                non_delete_accounts.writeheader()
+                for account in accounts_non_delete:
+                    writerow(account)
+
+                return True
+        
+        return False

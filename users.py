@@ -26,7 +26,6 @@ class User:
         with open(User.database, 'r') as check_creation:
             csv_data = csv.DictReader(check_creation)
             for line in csv_data:
-                print(line)
                 if line['email'] == self.get_email():   
                     return True
             return False
@@ -95,7 +94,6 @@ class User:
         with open(User.database, 'r') as check_creation:
             csv_data = csv.DictReader(check_creation)
             for line in csv_data:
-                print(line)
                 if line['email'] == email and line['password'] == password :   
                     return True
             return False
