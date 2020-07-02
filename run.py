@@ -46,7 +46,7 @@ def main():
                                 user_created = User(first_name, last_name, email, password)
                                 if user_created.create_account():
                                     print('--------------------------------------------------------')
-                                    print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tUser created successfully!\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\tEnter\t\t\t\t|')
+                                    print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tUser created successfully!\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\tEnter\t\t\t\t|')
                                     print('--------------------------------------------------------')
                                     status = input()
                                     if status == '1':
@@ -55,7 +55,7 @@ def main():
                                         signup = not signup
                                 else:
                                     print('--------------------------------------------------------')
-                                    print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tSomething wrong happened\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\tEnter\t\t\t\t|')
+                                    print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tSomething wrong happened\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\tEnter\t\t\t\t|')
                                     print('--------------------------------------------------------')
                                     status = input()
                                     if status == '1':
@@ -67,14 +67,14 @@ def main():
             login = False
             while not login:
                 print('--------------------------------------------------------')
-                print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Please enter your email\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t1. Cancel\t\t|')
+                print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Please enter your email\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t1. Cancel\t\t|')
                 print('--------------------------------------------------------')
                 email = input()
                 if email == '1':
                     login = not login
                 else:
                     print('--------------------------------------------------------')
-                    print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Please enter your password\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t1. Cancel\t\t|')
+                    print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Please enter your password\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t1. Cancel\t\t|')
                     print('--------------------------------------------------------')
                     password = input()
                     if password == '1':
@@ -83,7 +83,7 @@ def main():
                         account_status = User.check_account_exist(email, password)
                         if account_status:
                             print('--------------------------------------------------------')
-                            print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tWE ARE IN\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|1. View Password Accounts\t\t\t\t|\n|2. Create new Password Account\t\t\t\t|\n|3. Delete a password Account\t\t\t\t|\n\t\t\t\t\t\t\t|')
+                            print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tWE ARE IN\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|1. View Password Accounts\t\t\t\t|\n|2. Create new Password Account\t\t\t\t|\n|3. Delete a password Account\t\t\t\t|\n\t\t\t\t\t\t\t|')
                             print('--------------------------------------------------------')
                             perform = input()
                             if perform == '1':
@@ -103,13 +103,13 @@ def main():
                                 login = not login
                             elif perform == '2':
                                 print('--------------------------------------------------------')
-                                print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|What account is this for? eg. Instagram, Twitter etc\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t\t|')
+                                print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|What account is this for? eg. Instagram, Twitter etc\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t\t|')
                                 print('--------------------------------------------------------')
                                 account = input()
                                 account_exists = Credential.check_an_account_exist(email, account)
                                 if len(account) > 0 and not account_exists :
                                     print('--------------------------------------------------------')
-                                    print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tWE ARE IN\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|1. Get generated password\t\t\t\t|\n|2. Generate your own password\t\t\t\t|\n|\t\t\t\t\t\t\t|')
+                                    print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tWE ARE IN\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|1. Get generated password\t\t\t\t|\n|2. Generate your own password\t\t\t\t|\n|\t\t\t\t\t\t\t|')
                                     print('--------------------------------------------------------')
                                     selected_account = input()
                                     if selected_account == '1':
@@ -118,18 +118,18 @@ def main():
                                                 
                                         if user_created_account.create_credential():
                                             print('--------------------------------------------------------')
-                                            print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Account created successfully.\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t\t|')
+                                            print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Account created successfully.\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t\t|')
                                             print('--------------------------------------------------------')
                                             input()
                                         else:
                                             print('--------------------------------------------------------')
-                                            print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Something wrong happened. Please try again.\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t|')
+                                            print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Something wrong happened. Please try again.\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t|')
                                             print('--------------------------------------------------------')
                                         
                                         login = not login
                                     else:
                                         print('--------------------------------------------------------')
-                                        print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Enter password to use.(Greater than 8 characters) \t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t\t|')
+                                        print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Enter password to use.(Greater than 8 characters) \t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t\t|')
                                         print('--------------------------------------------------------')
                                         account_password = input()
                                         ok_create = True
@@ -139,24 +139,24 @@ def main():
                                                 
                                                 if user_created_account.create_credential():
                                                     print('--------------------------------------------------------')
-                                                    print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Account created successfully.\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t\t|')
+                                                    print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Account created successfully.\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t\t|')
                                                     print('--------------------------------------------------------')
                                                     input()
                                                 else:
                                                     print('--------------------------------------------------------')
-                                                    print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Something wrong happened. Please try again.\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t|')
+                                                    print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Something wrong happened. Please try again.\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t|')
                                                     print('--------------------------------------------------------')
                                                 
                                                 ok_create = not ok_create
                                                 login = not login
                                             else:
                                                 print('--------------------------------------------------------')
-                                                print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Password too short try again.\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t|')
+                                                print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Password too short try again.\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t|')
                                                 print('--------------------------------------------------------')
                                                 ok_create = not ok_create    
                                 else:
                                     print('--------------------------------------------------------')
-                                    print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Sorry. Account already exist.\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t|')
+                                    print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Sorry. Account already exist.\t|\n|\t\t\t\t\t\t\t|\n|\t\tEnter\t\t\t\t|')
                                     print('--------------------------------------------------------')
                                     input()  
                                     login = not login      
@@ -187,7 +187,7 @@ def main():
                                 login = not login
                         else:
                             print('--------------------------------------------------------')
-                            print('|\t\t\t\t\t\t\t|\n|\tWe are glad you are here.\t\t\t|\n|\t\t\t\t\t\t\t|\n|Account does not exist. Please Sign Up\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\tEnter\t\t\t\t|')
+                            print('|\t\t\t\t\t\t\t|\n|\t\t\t\t\t\t\t|\n|Account does not exist. Please Sign Up\t\t\t|\n|\t\t\t\t\t\t\t|\n|\t\t\tEnter\t\t\t\t|')
                             print('--------------------------------------------------------')
                             error = input()
                             login = not login
