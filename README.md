@@ -7,8 +7,8 @@ Maintianing passwords across applications is just a pain in the .With ByPass you
 It is a commmand-line application. Meaning you use it on the terminal. This is efficient for developers, but best believe its interface... Well its friendly.
 ## Setup/Installation Requirements
 * Clone the repo `git clone https://github.com/GrishonNganga/ByPass.git`\
-* cd /ByPass\
-* 
+* Navigate into the directory cd /ByPass\
+* Run the application python3.6 run.py
 
 {Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? Do I need to install any dependencies? How should I set up my databases? Is there other code this app depends on?}
 ## Known Bugs
