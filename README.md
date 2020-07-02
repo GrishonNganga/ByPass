@@ -3,7 +3,7 @@
 
 #### By **Grishon Gikima**
 ## Description
-Maintianing passwords across applications is just a pain in the .With ByPass you can have all your passwords stored for you in a vault and all you have to do is remember just one password. ~Your ByPass password.
+Maintaining passwords across applications is just a pain in the .With ByPass you can have all your passwords stored for you in a vault and all you have to do is remember just one password. ~Your ByPass password.
 It is a commmand-line application. Meaning you use it on the terminal. This is efficient for developers, but best believe its interface... Well its friendly.
 ## Setup/Installation Requirements
 
