@@ -16,7 +16,7 @@ It is a commmand-line application. Meaning you use it on the terminal. This is e
 Tests
 * `python -m unittest discover`
 Coverage
-coverage run -m pytest
+`coverage run -m pytest`
 
 ## Known Bugs
 There are no know bugs atm. Feel free to reach out if you see something out of the ordinary.\
