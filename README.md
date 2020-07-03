@@ -12,9 +12,9 @@ It is a commmand-line application. Meaning you use it on the terminal. This is e
 * Navigate into the directory cd /ByPass
 * Run the application python3.6 run.py
 
-## Run Tests & Coverage
+##### Run Tests & Coverage
 Tests
-* `python -m unittest discover`
+* `python -m unittest discover`\
 Coverage
 `coverage run -m pytest`
 
