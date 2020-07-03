@@ -13,8 +13,10 @@ It is a commmand-line application. Meaning you use it on the terminal. This is e
 * Run the application python3.6 run.py
 
 ##### Run Tests & Coverage
+
 Tests
 * `python -m unittest discover`\
+
 Coverage
 * `coverage run -m pytest`
 
