@@ -20,7 +20,7 @@ Tests
 Coverage\
 NOTE: You will require coverage and pytest installed for this step.\
 `pip install coverage`\
-`pip install pytest`\
+`pip install pytest`
 * `coverage run -m pytest`
 
 ## Known Bugs
