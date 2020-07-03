@@ -1,5 +1,5 @@
 # ByPass
-#### This is a CL application that allows users manage their passwords. Call it. Your Password Vault. Have one password and all the rest are done for ypu.
+#### This is a CL application that allows users manage their passwords. Call it. Your Password Vault. Have one password and all the rest are done for you.
 
 #### By **Grishon Gikima**
 ## Description
