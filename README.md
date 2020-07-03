@@ -17,7 +17,10 @@ It is a commmand-line application. Meaning you use it on the terminal. This is e
 Tests
 * `python -m unittest discover`\
 
-Coverage
+Coverage\
+NOTE: You will require coverage and pytest installed for this step.\
+`pip install coverage`\
+`pip install pytest`\
 * `coverage run -m pytest`
 
 ## Known Bugs
